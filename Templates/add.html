@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+{% block title %}Add New Clients - {% endblock %}
+
+{% block content %}
+<style>
+ .registerLabel{
+  text-align:center;
+}
+
+</style>
+<h2 align="center">Add New Clients</h2>
+<form id="add_user" method="POST" action= "add">
+
+    {% csrf_token %}
+
+    <!--<div class="registerLabel">
+        ID : <input type="text" id="registerID" name="registerID" class="registerTextDetails">
+    </div>
+    <br>-->
+
+    <div class="registerLabel">
+        Name: <input type="text" id="registername" name="registername" class="registerTextDetails">
+    </div>
+    <br>
+
+    <div class="registerLabel">
+        Mob_No: <input type="text" id="registernum" name="registernum" class="registerTextDetails">
+    </div>
+    <br>
+
+    <div class="registerLabel">
+        Network: <input type="text" id="registernetwork" name="registernetwork" class="registerTextDetails">
+    </div>
+    <br>
+
+    <div class="registerLabel">
+        DOB: <input type="date" id="registerdob" name="registerdob"  class="registerTextDetails">
+    </div>
+
+    <br>
+
+    <div style="text-align: center;" id="registerButtonDiv">
+
+        <button type="submit" value="OK" class="registerButtons" id="submitRegistration">Register</button>
+        <button onclick="goBack()" class="registerButtons" id="cancelRegisterButton">Cancel</button>
+        <button type="reset" value="Reset">Reset</button>
+
+        <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+    </div>
+</form>
+{% endblock %}
