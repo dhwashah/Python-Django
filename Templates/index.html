@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+{% block title %}View Clients - {% endblock %}
+
+{% block content %}
+<style>
+  html, body {
+    height: 100%;
+  }
+  #tableContainer-1 {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  #tableContainer-2 {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+  }
+  #myTable {
+    margin: 0 auto;
+}
+  }
+</style>
+ <div id="tableContainer-1">
+  <div id="tableContainer-2">
+      <form action="edit.html" method="post">
+
+          {% csrf_token %}
+
+    <table id="myTable" border>
+      <tr>
+          <!--<th>ID</th>-->
+    <th>Name</th>
+    <th>Mob_No</th>
+    <th>Network</th>
+          <th>Created_On</th>
+           <th>DOB</th>
+    <th>Select</th>
+  </tr>
+    {% for item in res %}
+    <tr>
+        <!--<td>{{item.id}}</td>-->
+        <td>{{item.name}}</td>
+        <td>{{item.mob_no}}</td>
+        <td>{{item.network }}</td>
+        <td>{{item.date }}</td>
+        <td>{{item.dob}}</td>
+        <td><input type="radio" name="user_id" value="{{item.id}}">Update me !<br></td>
+    </tr>
+    {% endfor %}
+       </table>
+
+          <br>
+
+    <div style="text-align: center;">
+      <input type="button" onClick="parent.location='add.html'" value="Add Client">
+      <input name="edit" type="submit" value="Edit Client">
+        <input name="delete" type="submit" value="Delete Client">
+    </div>
+    </form>
+ <br>
+  </div>
+ </div>
+
+
+<!--<div style="float: left; width: 225px">
+             <form action="cancel.html">
+         <input type="submit" value="Cancel"></form>
+    </div>-->
+
+{% endblock %}
