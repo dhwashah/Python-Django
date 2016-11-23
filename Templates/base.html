@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{%endblock%} QA Tracker </title>
+</head>
+<body>
+<div id="hd">
+        <h1 align="center">Customer Details</h1>
+    </div>
+    <div id="mn">
+        <ul>
+            <li><a href="{% url 'index' %}">View Clients</a></li>
+            <li><a href="/admin/">Admin Site</a></li>
+        </ul>
+    </div>
+
+    <div id="bd">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
