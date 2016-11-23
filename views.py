@@ -55,8 +55,8 @@ def edit(request):
         return index(request)
 
 
-#def delete(request):
-    #if request.method == "POST":
-        #res = Clients.objects.get(id = request.POST.get('this_id').delete())
+def delete(request):
+    if request.method == "POST":
+        res = Clients.objects.get(id = request.POST.get('this_id').delete())
 
-       # return index(request)
+        return index(request)
