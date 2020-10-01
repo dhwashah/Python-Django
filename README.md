@@ -1,4 +1,4 @@
-# Python-Django
+# Python-Django-CRUD
 Webpage which performs basic CRUD Operation using Python Django Framework.
 
 Django is a free and open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern.
